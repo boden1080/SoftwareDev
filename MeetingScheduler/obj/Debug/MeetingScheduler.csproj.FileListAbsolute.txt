@@ -10,3 +10,15 @@ C:\Users\Lottie\source\repos\MeetingScheduler\MeetingScheduler\obj\Debug\Meeting
 C:\Users\Lottie\source\repos\MeetingScheduler\MeetingScheduler\obj\Debug\MeetingScheduler.exe
 C:\Users\Lottie\source\repos\MeetingScheduler\MeetingScheduler\obj\Debug\MeetingScheduler.pdb
 C:\Users\Lottie\source\repos\MeetingScheduler\MeetingScheduler\obj\Debug\MeetingScheduler.Form3.resources
+F:\softwaredev\SoftwareDev\MeetingScheduler\obj\Debug\MeetingScheduler.csprojAssemblyReference.cache
+F:\softwaredev\SoftwareDev\MeetingScheduler\obj\Debug\MeetingScheduler.Form1.resources
+F:\softwaredev\SoftwareDev\MeetingScheduler\obj\Debug\MeetingScheduler.Form2.resources
+F:\softwaredev\SoftwareDev\MeetingScheduler\obj\Debug\MeetingScheduler.Form3.resources
+F:\softwaredev\SoftwareDev\MeetingScheduler\obj\Debug\MeetingScheduler.Properties.Resources.resources
+F:\softwaredev\SoftwareDev\MeetingScheduler\obj\Debug\MeetingScheduler.csproj.GenerateResource.cache
+F:\softwaredev\SoftwareDev\MeetingScheduler\obj\Debug\MeetingScheduler.csproj.CoreCompileInputs.cache
+F:\softwaredev\SoftwareDev\MeetingScheduler\obj\Debug\MeetingScheduler.exe
+F:\softwaredev\SoftwareDev\MeetingScheduler\obj\Debug\MeetingScheduler.pdb
+F:\softwaredev\SoftwareDev\MeetingScheduler\bin\Debug\MeetingScheduler.exe.config
+F:\softwaredev\SoftwareDev\MeetingScheduler\bin\Debug\MeetingScheduler.exe
+F:\softwaredev\SoftwareDev\MeetingScheduler\bin\Debug\MeetingScheduler.pdb

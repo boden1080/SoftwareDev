@@ -26,6 +26,15 @@ namespace MeetingScheduler
         {
             meetings.Remove(m);
         }
+        public int Length()
+        {
+            int count = 0;
+            foreach (Meeting m in meetings)
+            {
+                count++;
+            }
+            return count;
+        }
         public void SaveToFile()
         {
             Stream stream = File.Open("Meetings.dat", FileMode.Create);

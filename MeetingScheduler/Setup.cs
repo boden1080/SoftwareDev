@@ -24,7 +24,7 @@ namespace MeetingScheduler
         {
             meeting.SetRoom(room);
         }
-        public void DateSelected(string date)
+        public void DateSelected(DateTime date)
         {
             meeting.SetDate(date);
         }
@@ -34,7 +34,7 @@ namespace MeetingScheduler
         }
 
         public int GetRoomPicked() { return meeting.GetRoom(); }
-        public string GetDate() { return meeting.GetDate(); }
+        public DateTime GetDate() { return meeting.GetDate(); }
         public int GetTime() { return meeting.GetTime(); }
 
         public Meeting GetMeeting() { return meeting; }
@@ -49,7 +49,7 @@ namespace MeetingScheduler
         }
         public bool IsDatePicked()
         {
-            if (meeting.GetDate() != "null")
+            if (meeting.GetDate() != null)
             {
                 return true;
             }

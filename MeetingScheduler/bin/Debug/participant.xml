@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Participant xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Peter Boden</Name>
+  <Preference>
+    <dateTime>2019-12-19T00:00:00</dateTime>
+    <dateTime>2019-12-20T00:00:00</dateTime>
+    <dateTime>2019-12-21T00:00:00</dateTime>
+  </Preference>
+  <Exclusion />
+</Participant>

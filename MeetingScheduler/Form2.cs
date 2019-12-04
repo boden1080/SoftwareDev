@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Xml.Serialization;
+using static System.Windows.Forms.CheckedListBox;
 
 namespace MeetingScheduler
 {
@@ -27,8 +28,7 @@ namespace MeetingScheduler
             meetings = new Meetings();
             meeting = new Meeting();
             
-            
-            
+
             //button disables
             monthCalendar1.Enabled = false;
             buttonTime1.Enabled = false;
@@ -38,10 +38,10 @@ namespace MeetingScheduler
             buttonTime5.Enabled = false;
             buttonSubmit.Enabled = false;
 
+            //populate checkbox
             checkedListBox1.Items.Add("Projector");
             checkedListBox1.Items.Add("Television");
             checkedListBox1.Items.Add("Whiteboard");
-            checkedListBox1.Items.Add("Microphone");
         }
 
         private void room1Button_Click(object sender, EventArgs e)
@@ -74,7 +74,7 @@ namespace MeetingScheduler
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-            string date = monthCalendar1.SelectionRange.Start.ToShortDateString();
+            DateTime date = monthCalendar1.SelectionStart.Date;
             meeting.SetDate(date);
             UpdateForm();
         }
@@ -116,6 +116,19 @@ namespace MeetingScheduler
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
+            CheckedIndexCollection equipment = checkedListBox1.CheckedIndices;
+            if (equipment.Contains(0))
+            {
+                meeting.SetProjector();
+            }
+            if (equipment.Contains(1))
+            {
+                meeting.SetTelevision();
+            }
+            if (equipment.Contains(2))
+            {
+                meeting.SetWhiteboard();
+            }
             string status = "Meeting scheduled for\n" + meeting.ToString();
             meetings.Add(meeting);
             meetings.SaveToFile();
@@ -128,7 +141,7 @@ namespace MeetingScheduler
             {
                 monthCalendar1.Enabled = true;
             }
-            if (meeting.GetDate() != "null")
+            if (meeting.GetDate() != null)
             {
                 buttonTime1.Enabled = true;
                 buttonTime2.Enabled = true;
@@ -140,11 +153,6 @@ namespace MeetingScheduler
             {
                 buttonSubmit.Enabled = true;
             }
-        }
-
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

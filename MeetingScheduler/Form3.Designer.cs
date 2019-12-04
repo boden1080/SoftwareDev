@@ -30,13 +30,12 @@
         {
             this.labelPHeading = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.PrefCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label3 = new System.Windows.Forms.Label();
-            this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
-            this.buttonSubmit = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.ExcluCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.SubmitParticipant = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelPHeading
@@ -52,86 +51,74 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 52);
+            this.label1.Location = new System.Drawing.Point(17, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 13);
+            this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Select Participant";
+            this.label1.Text = "Name";
             // 
-            // comboBox1
+            // textBox1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(17, 69);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(169, 21);
-            this.comboBox1.TabIndex = 4;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(1, 2);
-            this.monthCalendar1.Location = new System.Drawing.Point(16, 149);
-            this.monthCalendar1.MinDate = new System.DateTime(2019, 11, 20, 0, 0, 0, 0);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 7;
-            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            this.textBox1.Location = new System.Drawing.Point(20, 66);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(205, 20);
+            this.textBox1.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 127);
+            this.label2.Location = new System.Drawing.Point(17, 93);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 13);
+            this.label2.Size = new System.Drawing.Size(112, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Set Preference Days";
+            this.label2.Text = "Add Preference Dates";
+            // 
+            // PrefCalendar1
+            // 
+            this.PrefCalendar1.CalendarDimensions = new System.Drawing.Size(1, 2);
+            this.PrefCalendar1.Location = new System.Drawing.Point(17, 115);
+            this.PrefCalendar1.Name = "PrefCalendar1";
+            this.PrefCalendar1.TabIndex = 6;
+            this.PrefCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.PrefCalendar1_DateSelected);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(326, 127);
+            this.label3.Location = new System.Drawing.Point(446, 93);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Set Exclusion Days";
+            this.label3.Size = new System.Drawing.Size(105, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Add Exclusion Dates";
             // 
-            // monthCalendar2
+            // ExcluCalendar1
             // 
-            this.monthCalendar2.CalendarDimensions = new System.Drawing.Size(1, 2);
-            this.monthCalendar2.Location = new System.Drawing.Point(329, 149);
-            this.monthCalendar2.Name = "monthCalendar2";
-            this.monthCalendar2.TabIndex = 8;
+            this.ExcluCalendar1.CalendarDimensions = new System.Drawing.Size(1, 2);
+            this.ExcluCalendar1.Location = new System.Drawing.Point(449, 115);
+            this.ExcluCalendar1.Name = "ExcluCalendar1";
+            this.ExcluCalendar1.TabIndex = 8;
+            this.ExcluCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.ExcluCalendar1_DateSelected);
             // 
-            // buttonSubmit
+            // SubmitParticipant
             // 
-            this.buttonSubmit.Location = new System.Drawing.Point(591, 407);
-            this.buttonSubmit.Name = "buttonSubmit";
-            this.buttonSubmit.Size = new System.Drawing.Size(105, 41);
-            this.buttonSubmit.TabIndex = 9;
-            this.buttonSubmit.Text = "Submit";
-            this.buttonSubmit.UseVisualStyleBackColor = true;
-            this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(591, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(105, 41);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.SubmitParticipant.Location = new System.Drawing.Point(526, 439);
+            this.SubmitParticipant.Name = "SubmitParticipant";
+            this.SubmitParticipant.Size = new System.Drawing.Size(150, 35);
+            this.SubmitParticipant.TabIndex = 9;
+            this.SubmitParticipant.Text = "Submit";
+            this.SubmitParticipant.UseVisualStyleBackColor = true;
+            this.SubmitParticipant.Click += new System.EventHandler(this.SubmitParticipant_Click);
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(708, 460);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.buttonSubmit);
-            this.Controls.Add(this.monthCalendar2);
-            this.Controls.Add(this.monthCalendar1);
+            this.ClientSize = new System.Drawing.Size(708, 486);
+            this.Controls.Add(this.SubmitParticipant);
+            this.Controls.Add(this.ExcluCalendar1);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.PrefCalendar1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelPHeading);
             this.Name = "Form3";
@@ -145,12 +132,11 @@
 
         private System.Windows.Forms.Label labelPHeading;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.MonthCalendar PrefCalendar1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MonthCalendar monthCalendar2;
-        private System.Windows.Forms.Button buttonSubmit;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.MonthCalendar ExcluCalendar1;
+        private System.Windows.Forms.Button SubmitParticipant;
     }
 }

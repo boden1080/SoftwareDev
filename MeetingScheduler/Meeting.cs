@@ -13,7 +13,7 @@ namespace MeetingScheduler
     {
         //attributes
         private int room;
-        private string date;
+        private DateTime date;
         private int time;
         private bool projecter, television, whiteboard;
 
@@ -21,13 +21,13 @@ namespace MeetingScheduler
         public Meeting()
         {
             room = -1;
-            date = "null";
+            date = new DateTime();
             time = -1;
             projecter = false;
             television = false;
             whiteboard = false;
         }
-        public Meeting(int room, string date, int time)
+        public Meeting(int room, DateTime date, int time)
         {
             this.room = room;
             this.date = date;
@@ -35,14 +35,14 @@ namespace MeetingScheduler
         }
         //operations
         public int GetRoom(){return room;}
-        public string GetDate() { return date; }
+        public DateTime GetDate() { return date; }
         public int GetTime() { return time; }
 
         public void SetRoom(int room)
         {
             this.room = room;
         }
-        public void SetDate(string date)
+        public void SetDate(DateTime date)
         {
             this.date = date;
         }
@@ -50,9 +50,40 @@ namespace MeetingScheduler
         {
             this.time = time;
         }
+        public void SetProjector()
+        {
+            projecter = true;
+        }
+        public void SetTelevision()
+        {
+            television = true;
+        }
+        public void SetWhiteboard()
+        {
+            whiteboard = true;
+        }
         public override string ToString()
         {
-            return string.Format("Room: "+ room.ToString()+ "\nDate: "+ date + "\nTime: "+ time.ToString());
+            string proj, tele, white;
+            if (projecter == true)
+            {
+                proj = "\nAdded Projector";
+            }
+            else
+                proj = null;
+            if (television == true)
+            {
+                tele = "\nAdded Television";
+            }
+            else
+                tele = null;
+            if (whiteboard == true)
+            {
+                white = "\nAdded Whiteboard";
+            }
+            else
+                white = null;
+            return string.Format("Room: "+ room.ToString()+ "\nDate: "+ date + "\nTime: "+ time.ToString() + proj + tele + white);
         }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
@@ -64,7 +95,7 @@ namespace MeetingScheduler
         public Meeting(SerializationInfo info, StreamingContext context)
         {
             room = (int)info.GetValue("Room", typeof(int));
-            date = (string)info.GetValue("Date", typeof(string));
+            date = (DateTime)info.GetValue("Date", typeof(DateTime));
             time = (int)info.GetValue("Time", typeof(int));
         }
     }

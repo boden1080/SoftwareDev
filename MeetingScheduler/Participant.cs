@@ -3,36 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
 
 namespace MeetingScheduler
 {
-    class Participant
+    [Serializable()]
+    public class Participant : ISerializable
     {
         //attributes
         public string Name;
-        private List<DateTime> Preference;
-        private List<DateTime> Exclusion;
+        public List<DateTime> Preference;
+        public List<DateTime> Exclusion;
 
 
         //constructor
         public Participant()
         {
             Name = "default";
-            Preference = null;
-            Exclusion = null;
+            Preference = new List<DateTime>();
+            Exclusion = new List<DateTime>();
         }
         public Participant(string Name)
         {
             this.Name = Name;
+            Preference = new List<DateTime>();
+            Exclusion = new List<DateTime>();
         }
-
-        Participant John = new Participant("John Lennon");
-        Participant Peter = new Participant("Peter Boden");
-        Participant Steve = new Participant("Steve Jobs");
-        Participant Mehmet = new Participant("Mehmet Ozcan");
-        Participant Babak = new Participant("Babak Khazaei");
-        Participant Souyma = new Participant("Soumya Basu");
-        Participant Andrew = new Participant("Andrew Bissett");
         
         //Methods
         public void SetName(string Name)
@@ -43,9 +41,35 @@ namespace MeetingScheduler
         {
             return Name;
         }
-        public void SetPreference(List<DateTime> p)
+        public List<DateTime> GetPreferences()
         {
-            this.Preference = p;
+            return Preference;
         }
+        public void AddPreferenceDate(DateTime p)
+        {
+            Preference.Add(p);
+        }
+        public List<DateTime> GetExclusion()
+        {
+            return Exclusion;
+        }
+        public void AddExclusionDate(DateTime e)
+        {
+            Exclusion.Add(e);
+        }
+
+        public void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            info.AddValue("Name", Name);
+            info.AddValue("Preference dates", Preference);
+            info.AddValue("Exclusion dates", Exclusion);
+        }
+        public Participant(SerializationInfo info, StreamingContext context)
+        {
+            Name = (string)info.GetValue("Name", typeof(string));
+            Preference = (List<DateTime>)info.GetValue("Preference dates", typeof(List<DateTime>));
+            Exclusion = (List<DateTime>)info.GetValue("Exclusion dates", typeof(List<DateTime>));
+        }
+
     }
 }
